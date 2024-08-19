@@ -15,11 +15,11 @@
     <section class="services-section">
         <div class="container">
             <div class="wrapper">
-                <div class="image">
+                <div class="image" data-aos="fade-up">
                     <NuxtPicture priority format="webp,avif" :src="`images/your-strategic-partner.png`" class="w-full"
                         :imgAttrs="{class:'w-full'}" />
                 </div>
-                <p class="description">
+                <p class="description" data-aos="fade-up">
                     At Monty Capital, we recognize that navigating the capital landscape is a complex journey for
                     businesses.<br />
                     Many struggle to become investor-ready, execute impactful roadshows, and negotiate favorable
@@ -66,7 +66,7 @@
             </div>
 
             <div class="wrapper">
-                <p>Private Family Offices and Family Holding Companies face the challenge of managing diverse assets and
+                <p data-aos="fade-right">Private Family Offices and Family Holding Companies face the challenge of managing diverse assets and
                     investments efficiently, leading to missed opportunities and increased risk.<br />
                     Monty Capital introduces a Family Diversification Platform, empowering family offices to streamline
                     asset management, optimize portfolios, and enhance financial resilience. Our tailored platform
@@ -74,7 +74,7 @@
                     preservation.</p>
 
                 <NuxtPicture priority format="webp,avif" :src="`images/family-office-diversification-platform.png`"
-                    class="w-full" :imgAttrs="{class:'w-full'}" />
+                    class="w-full" :imgAttrs="{class:'w-full'}" data-aos="fade-left"  />
             </div>
         </div>
     </section>

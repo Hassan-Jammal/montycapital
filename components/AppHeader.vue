@@ -11,7 +11,7 @@
                         <ul class="nav-list">
                             <li class="nav-list--item" v-for="(link, index) in navLinks" :key="index">
                                 <NuxtLink :to="link.route" class="nav-list--item-link">
-                                    <span>{{link.text}}</span>
+                                   {{link.text}}
                                 </NuxtLink>
                             </li>
                         </ul>
@@ -28,7 +28,7 @@
                 <ul class="nav-mobile--list">
                     <li class="nav-mobile--list-item" v-for="(link, index) in navLinks" :key="index">
                         <NuxtLink :to="link.route" class="nav-mobile--list-item-link">
-                            <span>{{link.text}}</span>
+                           {{link.text}}
                         </NuxtLink>
                     </li>
                 </ul>
@@ -55,7 +55,8 @@ const closeNav = () => {
 
 onMounted(() => {
     document.body.addEventListener("click", (e) => {
-        if (e.target.classList.contains('nav-link')) {
+        console.log(e.target)
+        if (e.target.classList.contains('nav-mobile--list-item-link') || e.target.classList.contains('close-nav')) {
             closeNav()
         }
     });
