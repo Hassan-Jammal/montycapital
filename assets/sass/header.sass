@@ -1,0 +1,99 @@
+.header
+    &-main
+        -webkit-transition: all 0.3s ease
+        -o-transition: all 0.3s ease
+        @apply fixed top-0 left-0 w-full z-50 min-h-[105px] transition-all duration-300 ease-in-out
+
+        &.background
+            backdrop-filter: saturate(180%) blur(20px)
+            -webkit-backdrop-filter: saturate(180%) blur(20px)
+            @apply bg-[#29292999]
+
+        &.active
+            transition: transform 0.3s ease-in-out
+            @apply -translate-y-full
+
+        .nav-mobile
+            @apply block lg:hidden fixed top-0 left-0 h-screen w-full bg-[#5B6670] text-white text-xl transition-transform duration-300 ease-in-out z-[2]
+
+            &--list
+                @apply flex flex-col gap-6 mt-[135px]
+
+                &-item
+                    @apply font-Karla-Bold
+
+                    &-link .icon
+                        @apply text-xl
+
+    &-outer
+        @apply w-full py-6 border-b border-[#e9edf422] z-[3]
+
+    &-inner
+        @apply container flex justify-between items-center
+
+        &--nav
+            @apply flex items-center gap-4 lg:gap-7
+
+            &-desktop
+                @apply hidden lg:block
+
+                .nav-list
+                    @apply flex items-center gap-10 text-white
+
+                    &--item
+                        @apply text-white font-Karla-Bold
+
+                        &-link
+                            @apply text-base
+
+            &-mobile-toggle
+                @apply block lg:hidden leading-[0] text-3xl cursor-pointer
+
+                .icon
+                    @apply text-3xl text-white
+
+// Header color on scroll
+body
+    .header-main
+        svg
+            path:not(.avoid)
+                fill: #000000 // Default fill color for all pages except homepage
+
+        &.background
+            svg
+                path:not(.avoid)
+                    fill: #FFFFFF // White fill when background class is present
+
+        .header-inner--nav-desktop .nav-list--item
+            @apply text-white // White text when background class is present
+
+        &:not(.background)
+            .header-inner--nav-desktop .nav-list--item
+                @apply text-black // Black text when background class is absent
+
+        &:not(.background) .header-inner--nav-mobile-toggle .icon
+            @apply text-black
+
+        &.nav-visible
+            .header-inner--nav-mobile-toggle .icon
+                @apply text-white
+
+            svg
+                path:not(.avoid)
+                    fill: #FFFFFF
+
+    &.homepage
+        .header-main
+            svg
+                path:not(.avoid)
+                    fill: #FFFFFF // Ensure fill color is always white on the homepage
+
+        .header-inner--nav-desktop .nav-list--item
+            @apply text-white !important // Force text to be white on the homepage
+
+        &:not(.background)
+            .header-inner--nav-desktop .nav-list--item
+                @apply text-white !important // Override black text on the homepage
+
+        .header-inner--nav-mobile-toggle .icon
+            @apply text-white !important

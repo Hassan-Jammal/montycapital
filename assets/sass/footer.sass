@@ -1,0 +1,45 @@
+
+.footer
+    @apply py-16 bg-black text-white
+
+    &--top
+        @apply flex justify-between items-center
+
+        .social-media
+            @apply flex justify-center items-center gap-8 text-2xl
+
+    &--middle
+        .nav-wrapper
+            @apply flex justify-between
+            .nav-block
+                // Styles for each navigation block
+
+                .heading
+                    @apply font-medium
+
+                .nav-list
+                    @apply hidden  md:flex flex-col gap-6 mt-4
+
+                    .nav-item
+
+                        .nav-link
+                            @apply font-light text-base
+
+    &--bottom
+        .top-level
+            @apply flex flex-col md:flex-row justify-between
+
+            .copyright
+                @apply font-light text-base
+
+            .nav-list
+                @apply flex flex-col md:flex-row md:justify-center md:gap-4 max-md:mt-6 font-light text-base
+
+        .bottom-level
+            @apply mt-6
+
+            .disclaimer
+                @apply font-light text-xs text-neutral-400
+
+    &--line
+        @apply my-10 md:my-14 border-neutral-800

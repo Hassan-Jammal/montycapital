@@ -1,0 +1,379 @@
+main
+    section
+        // Homepage
+
+        &.hero-banner
+            @apply w-full min-h-screen bg-[url('images/welcome-to-montycapital-max-lg.png')] lg:bg-[url('images/welcome-to-montycapital-lg.png')] bg-no-repeat bg-cover
+
+            .wrapper
+                @apply w-full md:w-3/4 xl:w-1/2 mx-auto min-h-screen flex gap-12 flex-col justify-center items-center text-center text-white
+
+            .heading
+                @apply text-4xl md:text-6xl xl:text-7xl font-Karla-Bold
+
+            .description
+                @apply w-full md:w-1/2 xl:w-2/3 mx-auto
+
+            .button
+                transition: background 0.3s ease-in-out, color 0.3s ease-in-out
+                @apply py-2 px-10 rounded-xl bg-white text-black text-base
+
+                &:hover
+                    @apply bg-black text-white
+
+        &.marquee
+            @apply overflow-hidden
+
+            .wrapper
+                @apply grid grid-flow-col auto-cols-[10rem] lg:auto-cols-[15rem] justify-items-center items-center my-10 animate-[marquee_20s_linear_infinite] lg:animate-[marqueelg_20s_linear_infinite]
+
+                &:hover
+                    animation-play-state: paused
+
+        &.services
+            .bg-shape
+                @apply bg-[url('images/services-bg-1.png')] bg-no-repeat bg-cover
+
+            .card
+                &-wrapper
+                    &.two
+                        @apply flex flex-col gap-20 lg:gap-10 p-6 lg:p-14 2xl:p-32 lg:px-20 2xl:px-40 rounded-xl bg-[#FCFBFB]
+
+                        .content
+                            &-block
+                                @apply flex flex-col lg:flex-row justify-between items-stretch gap-10 md:gap-12
+
+                            &-left
+                                @apply flex-1 flex flex-col gap-6 p-10 bg-white rounded-xl
+
+                                .numbering
+                                    @apply w-max py-2 px-3 text-lg font-Karla-Bold bg-black text-white rounded-xl
+
+                                .title
+                                    @apply text-2xl font-Karla-Bold
+                                    // Styles for the title inside the text block
+
+                                .description
+                                    // Styles for the title inside the text block
+
+                            &-right
+                                @apply w-full flex-1 p-4 lg:p-14 rounded-xl
+
+                                &.image-1
+                                    @apply bg-[#E2E2D5]
+
+                                &.image-2
+                                    @apply bg-[#DCE1E4]
+
+                                &.image-3
+                                    @apply bg-[#EFEFE8]
+
+                    &.three
+                        @apply flex flex-col gap-20 lg:gap-10 lg:p-14 lg:pl-28 lg:pr-20 rounded-xl
+
+                        .content-block
+                            @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between items-center gap-2 md:gap-6 lg:gap-12
+
+                        .content
+                            &::before
+                                background: linear-gradient(132.21deg, #E2E2C5 3.14%, #F8F8F8 55.1%, #F3F2D6 98.72%)
+                                transition: box-shadow 0.3s ease
+                                @apply content-[''] absolute -top-[2px] -right-[2px] -left-[2px] -bottom-[2px] rounded-xl z-[-1]
+
+                            &:hover::before
+                                box-shadow: 0px 1.28px 2.55px 0px #86855E40,
+                                box-shadow: 0px 4px 4px 0px #00000040,
+                                box-shadow: 0px 0px 10px 0px #C4B768
+
+                            @apply flex flex-col gap-2 py-6 rounded-xl text-center bg-white cursor-pointer
+
+                            &--key
+                                @apply text-3xl font-Karla-ExtraBold
+
+                            &--label
+                                @apply text-base font-Karla-Medium uppercase
+
+            .company
+                @apply flex flex-col lg:flex-row justify-between mt-32
+
+                & > *
+                    @apply flex-1 text-start
+
+                .title
+                    .heading
+                        @apply text-4xl font-Karla-ExtraBold
+
+                    .subheading
+                        @apply block text-2xl font-Karla-Bold mt-2
+
+        &.financial-advisory
+            @apply bg-[url('images/financial-advisory-bg-1.png')] bg-no-repeat bg-cover mt-20
+
+            svg
+                @apply mx-auto
+
+            .partnerships
+                @apply flex flex-wrap justify-center items-stretch gap-4 mt-10
+
+                .item
+                    @apply flex justify-center items-center flex-1 p-8 text-center text-xl text-white bg-black rounded-xl
+
+            .arrow-right
+                @apply flex items-center mt-12
+
+                .line
+                    background: linear-gradient(90deg, rgb(255, 255, 255) -4.19%, rgb(130, 131, 108) 100.49%)
+                    @apply w-[96%] h-6
+
+                    .content
+                        @apply absolute top-0 left-0 flex justify-center items-center h-full text-sm font-Karla-Medium lg:ml-8
+
+                .angle
+                    clip-path: polygon(0 0, 0% 100%, 100% 50%)
+                    @apply w-[4%] h-12 p-4 bg-[rgb(130,131,108)]
+
+            .startups
+                @apply flex flex-col lg:flex-row flex-wrap justify-center items-stretch gap-4 mt-12
+
+                .item
+                    box-shadow: 0px 1px 4px 0px #00000033
+                    @apply flex flex-col items-center flex-1 p-6 text-xl bg-white border rounded-xl
+
+                    .range
+                        @apply w-full p-5 text-center text-[#6B6A49] bg-[#F7F7F1] rounded-xl mb-4
+
+        &.values
+            @apply text-white bg-[url('images/values-bg-1.png')] bg-no-repeat bg-cover bg-black mt-28 py-28
+
+            .title
+                .heading
+                    @apply text-4xl font-Karla-ExtraBold text-center
+
+            .wrapper
+                @apply flex flex-wrap justify-center items-stretch gap-8 mt-20 px-0 lg:px-12
+
+                .item
+                    @apply flex flex-col justify-start items-center flex-1 p-6 text-center bg-black border rounded-xl
+
+                    .heading
+                        @apply text-lg mt-4
+
+                    .icon
+                        @apply block
+
+        &.news
+            @apply bg-[url('images/news-bg-1.png')] bg-no-repeat bg-cover my-20
+
+            .wrapper
+                @apply grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 justify-center
+
+                .item
+                    @apply flex flex-col gap-2 p-4 bg-[#FBFBFB] rounded-xl
+
+                    .date
+                        @apply text-xs text-[#1F1F1F]
+
+                    hr
+                        @apply border-[#EAEAEA]
+
+                    .title
+                        @apply text-base font-Karla-Bold
+
+                    .button
+                        transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out
+                        @apply flex mt-auto w-max py-2 px-4 text-base text-white bg-black border-2 border-black rounded-xl overflow-hidden
+
+                        &:hover
+                            @apply text-black bg-[#DFDE9D] border-2 border-[#C0BE81]
+
+                        &:before, &:after
+                            @apply content-[''] absolute w-24 h-full top-0 -left-full
+
+                        &:before
+                            background-image: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, .8), rgba(255, 255, 255, 0) 70%)
+
+                        &:after
+                            background-image: linear-gradient(120deg, rgba(192, 190, 129, 0) 30%, rgba(192, 190, 129, .8), rgba(192, 190, 129, 0) 70%)
+
+                        &:hover
+                            &:before
+                                animation: shine 0.7s ease-in-out
+                                @apply -left-[10%]
+
+                            &:after
+                                animation: shine 0.3s ease-in-out
+                                @apply left-[20%]
+
+        .section-title
+            @apply block w-max mx-auto mt-28 mb-12
+
+            .heading
+                @apply text-4xl font-Karla-ExtraBold text-center
+
+            .icon
+                @apply flex justify-center mt-4
+
+                .tri
+                    @apply w-28 h-10
+
+                    &1
+                        clip-path: polygon(0 0, 100% 50%, 100% 0)
+                        @apply bg-[#DFDE9D] ml-4
+
+                    &2
+                        clip-path: polygon(0 0, 0 50%, 100% 0)
+                        @apply bg-[#86855E] mr-4
+
+                .line
+                    @apply w-full h-[2px] bg-[#DCE1E4]
+
+            svg
+                @apply mx-auto
+
+        .icon
+            @apply w-max mx-auto flex justify-center mt-4
+
+            .tri
+                @apply w-28 h-10
+
+                &1
+                    clip-path: polygon(0 0, 100% 50%, 100% 0)
+                    @apply bg-[#DFDE9D] ml-4
+
+                &2
+                    clip-path: polygon(0 0, 0 50%, 100% 0)
+                    @apply bg-[#86855E] mr-4
+
+            .line
+                @apply w-full h-[2px] bg-[#DCE1E4]
+
+        // Contact Us
+        &.banner
+            @apply mt-52
+
+            .wrapper
+                @apply w-full md:w-3/4 xl:w-1/2 mx-auto text-center
+
+                .heading
+                    @apply text-3xl md:text-5xl xl:text-6xl font-Karla-Bold
+
+                .description
+                    @apply w-full md:w-1/2 xl:w-2/3 mx-auto mt-6
+
+                .button
+                    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out
+                    @apply flex w-max mx-auto mt-6 py-2 px-10 text-base text-white bg-black border-2 border-black rounded-xl overflow-hidden
+
+                    &:hover
+                        @apply text-black bg-[#DFDE9D] border-2 border-[#C0BE81]
+
+                    &:before, &:after
+                        @apply content-[''] absolute w-24 h-full top-0 -left-full
+
+                    &:before
+                        background-image: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, .8), rgba(255, 255, 255, 0) 70%)
+
+                    &:after
+                        background-image: linear-gradient(120deg, rgba(192, 190, 129, 0) 30%, rgba(192, 190, 129, .8), rgba(192, 190, 129, 0) 70%)
+
+                    &:hover
+                        &:before
+                            animation: shine 0.7s ease-in-out
+                            @apply -left-[10%]
+
+                        &:after
+                            animation: shine 0.3s ease-in-out
+                            @apply left-[20%]
+
+        &.startup-application-form
+            @apply my-14
+
+            .wrapper
+                @apply flex flex-col items-center gap-6 py-14 px-2 bg-[#F7F7F3] rounded-xl text-center
+
+                .heading
+                    @apply text-3xl font-Karla-Bold
+
+                .description
+                    @apply w-full md:w-1/2 xl:w-2/3 mx-auto
+
+                .button
+                    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out
+                    @apply flex mt-auto w-max py-2 px-10 text-base text-white bg-black border-2 border-black rounded-xl overflow-hidden
+
+                    &:hover
+                        @apply text-black bg-[#DFDE9D] border-2 border-[#C0BE81]
+
+                    &:before, &:after
+                        @apply content-[''] absolute w-24 h-full top-0 -left-full
+
+                    &:before
+                        background-image: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, .8), rgba(255, 255, 255, 0) 70%)
+
+                    &:after
+                        background-image: linear-gradient(120deg, rgba(192, 190, 129, 0) 30%, rgba(192, 190, 129, .8), rgba(192, 190, 129, 0) 70%)
+
+                    &:hover
+                        &:before
+                            animation: shine 0.7s ease-in-out
+                            @apply -left-[10%]
+
+                        &:after
+                            animation: shine 0.3s ease-in-out
+                            @apply left-[20%]
+
+        &.map
+            @apply my-14
+
+            .wrapper
+                @apply flex flex-col lg:flex-row justify-between items-start gap-12 md:gap-32 2xl:gap-60
+
+                .left
+                    @apply flex-1 w-full
+
+                    .heading
+                        @apply text-3xl font-Karla-Bold
+
+                    .details
+                        @apply mt-10 flex flex-col gap-8
+
+                        .item
+                            @apply flex gap-4
+
+                .right
+                    @apply flex-1 w-full
+
+                    iframe
+                        @apply rounded-xl
+
+        // Services
+        &.services-section
+            @apply bg-[url('images/services-section.png')] bg-no-repeat bg-cover
+
+            .wrapper
+                @apply w-full lg:w-4/5 mx-auto mt-14
+
+                .description
+                    @apply text-center mt-14
+
+        &.advisory
+            .wrapper
+                @apply grid grid-cols-1 md:grid-cols-2 gap-4
+
+                .item
+                    @apply w-full flex flex-col gap-6 bg-[#EBEEEF] py-32 px-12 rounded-xl
+
+                    &:nth-child(1), &:nth-child(4), &:nth-child(5)
+                        @apply md:bg-[#FDFDFD]
+
+                    .title
+                        @apply text-3xl font-Karla-Bold
+
+        &.family-office-diversification-platform
+            @apply mb-20
+
+            .wrapper
+                @apply flex flex-col md:flex-row gap-10 md:gap-2 lg:gap-6 2xl:gap-80
+
+                p, picture
+                    @apply flex-1
