@@ -771,7 +771,7 @@
             first_name: '',
             last_name: '',
             title: '',
-            code: initialCode,
+            code: initialCode.value,
             mobile: '',
             email: '',
             linkedin_link: '',
@@ -796,7 +796,7 @@
             first_name: '',
             last_name: '',
             title: '',
-            code: initialCode,
+            code: initialCode.value,
             mobile: '',
             email: '',
             linkedin_link: '',
@@ -862,7 +862,10 @@
             if (data && data.country) {
                 
                 const detectedCountry = countriesData.find(country => country.iso2 === data.country);
-                console.log(detectedCountry)
+                console.log("detected "+detectedCountry)
+                console.log("selected "+selectedCountry.value)
+                console.log("form "+form.value.code)
+                console.log("initial "+initialCode.value)
 
                 if (detectedCountry && !selectedCountry.value) {
                     selectedCountry.value = detectedCountry;
