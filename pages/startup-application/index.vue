@@ -769,7 +769,7 @@
             first_name: '',
             last_name: '',
             title: '',
-            code: initialCode.value,
+            code: selectedCountry.value ? selectedCountry.value.code : initialCode.value,
             mobile: '',
             email: '',
             linkedin_link: '',
@@ -794,7 +794,8 @@
             first_name: '',
             last_name: '',
             title: '',
-            code: initialCode.value,
+            // code: initialCode.value,
+            code: '',
             mobile: '',
             email: '',
             linkedin_link: '',
@@ -860,10 +861,12 @@
             if (data && data.country) {
                 const detectedCountry = countriesData.find(country => country.iso2 === data.country);
                 //&& !selectedCountry.value
-                if (detectedCountry ) {
-                    selectedCountry.value = detectedCountry;
-                    form.value.code = detectedCountry.code;
-                    initialCode.value = detectedCountry.code
+                if (detectedCountry) {
+                    if (!selectedCountry.value || !selectedCountry.value.iso2) {
+                        selectedCountry.value = detectedCountry;
+                        form.value.code = detectedCountry.code;
+                        initialCode.value = detectedCountry.code
+                    }
                 } else {
                     console.warn('Detected country not found in countries data'); // Debug log
                 }
