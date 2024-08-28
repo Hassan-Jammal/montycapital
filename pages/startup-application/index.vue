@@ -858,10 +858,12 @@
             const data = await response.json();
 
             if (data && data.country) {
-                console.log(data && data.country)
+                console.log("respoonse"+response)
+                console.log("data"+data)
+                console.log("data and data.country"+data && data.country)
                 
                 const detectedCountry = countriesData.find(country => country.iso2 === data.country);
-                console.log(detectedCountry)
+                // console.log(detectedCountry)
 
                 if (detectedCountry && !selectedCountry.value) {
                     selectedCountry.value = detectedCountry;
