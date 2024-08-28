@@ -39,8 +39,8 @@
                 </div>
                 <div class="right" data-aos="fade-left">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.3788250402363!2d55.27469805765017!3d25.205100323363887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4285a63e8017%3A0xc95d5017c9fa72ba!2sCentral%20Park%20Towers%20Offices!5e0!3m2!1sen!2slb!4v1723637061199!5m2!1sen!2slb"
-                        width="100%" height="300px" allowfullscreen="" loading=" lazy"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.3788250402363!2d55.27469805765017!3d25.205100323363887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4285a63e8017%3A0xc95d5017c9fa72ba!2sCentral%20Park%20Towers%20Offices!5e0!3m2!1sen!2slb!4v1723637061199!5m2!1sen!2slb&scrollwheel=0"
+                        width="100%" height="300px" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
