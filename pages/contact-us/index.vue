@@ -1,5 +1,5 @@
 <template lang="">
-    <section class="banner">
+    <section class="banner extra-spacing">
         <div class="container">
             <div class="wrapper">
                 <h1 class="heading" data-aos="fade-up" data-aos-delay="100">Contact us</h1>

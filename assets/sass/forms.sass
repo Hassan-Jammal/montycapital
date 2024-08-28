@@ -1,0 +1,95 @@
+.form
+    .wrapper
+        @apply text-sm w-full flex flex-col gap-6 mt-10 py-8 px-6 lg:py-16 lg:px-14 bg-[#FBFBFB] rounded-xl
+
+        .form-group
+            @apply flex flex-col md:flex-row gap-6 w-full
+
+            &.no-space
+                @apply flex-row max-md:gap-2
+
+            .input
+                &-container
+                    @apply flex flex-col gap-1 w-full
+
+                    .selected-country
+                        @apply flex justify-start items-center gap-2
+
+                        // &--image 
+                        //     @apply 
+
+                        // &--name
+                        //     @apply mr-auto
+
+                        // &--icon
+                        //     @apply text-lg text-[#9ca3af] transition-transform duration-300 ease-in-out
+
+                // &-label
+                //     @apply text-sm
+
+                &-field
+                    @apply w-full text-base px-4 py-2 bg-primary text-black rounded-xl outline-0 border border-[#D0D5DD]
+
+                &-error
+                    @apply text-red-500 text-xs
+
+            .dropdown-container
+                box-shadow: 0 0.1875rem 0.5rem #00000022
+                @apply absolute top-full left-0 w-full max-h-[200px] text-sm rounded-xl bg-primary text-black mt-2 overflow-auto z-50
+
+                .input-search
+                    @apply sticky top-0 left-0 w-full bg-primary px-4 py-2 border-b border-b-slate-200 outline-0 z-10
+
+                .item
+                    @apply flex gap-3 text-black p-2 hover:bg-slate-200
+
+            .button
+                transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out
+                @apply flex w-max mx-auto mt-6 py-2 px-10 text-base text-white bg-black border-2 border-black rounded-xl overflow-hidden
+
+                &:hover
+                    @apply text-black bg-[#DFDE9D] border-2 border-[#C0BE81]
+
+                &:before, &:after
+                    @apply content-[''] absolute w-24 h-full top-0 -left-full
+
+                &:before
+                    background-image: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, .8), rgba(255, 255, 255, 0) 70%)
+
+                &:after
+                    background-image: linear-gradient(120deg, rgba(192, 190, 129, 0) 30%, rgba(192, 190, 129, .8), rgba(192, 190, 129, 0) 70%)
+
+                &:hover
+                    &:before
+                        animation: shine 0.7s ease-in-out
+                        @apply -left-[10%]
+
+                    &:after
+                        animation: shine 0.3s ease-in-out
+                        @apply left-[20%]
+
+        .repeater
+            @apply w-full flex flex-col gap-10
+
+            .founder
+                @apply w-full flex flex-col gap-6
+
+    .heading
+        @apply text-3xl font-bold mt-10
+
+    // .subheading
+    //     @apply border-bottom
+
+.input-file input
+    @apply opacity-0 absolute w-full h-full
+
+.input-file label
+    @apply bg-white cursor-pointer border border-dashed border-[#e0e0e0] rounded-xl min-h-[200px] flex items-center justify-center p-14 text-center
+
+.custom-select
+    appearance: none
+    -webkit-appearance: none
+    -moz-appearance: none
+    background: url('~/public/images/arrow-down.svg') center no-repeat
+    background-position-x: 97%
+    background-size: 20px 20px

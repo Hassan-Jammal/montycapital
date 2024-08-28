@@ -14,10 +14,10 @@ module.exports = {
                 quaternary: '#0F0C22',
             },
             fontFamily: {
-                'Karla-Regular': ['Karla-Regular'],
-                'Karla-Medium': ['Karla-Medium'],
-                'Karla-Bold': ['Karla-Bold'],
-                'Karla-ExtraBold': ['Karla-ExtraBold'],
+                'regular': ['Karla-Regular'],
+                'medium': ['Karla-Medium'],
+                'bold': ['Karla-Bold'],
+                'extraBold': ['Karla-ExtraBold'],
             },
             screens: {
                 '2xl': '1536px',

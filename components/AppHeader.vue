@@ -55,7 +55,6 @@ const closeNav = () => {
 
 onMounted(() => {
     document.body.addEventListener("click", (e) => {
-        console.log(e.target)
         if (e.target.classList.contains('nav-mobile--list-item-link') || e.target.classList.contains('close-nav')) {
             closeNav()
         }
@@ -91,7 +90,7 @@ const checkScrollPosition = () => {
 
 const navLinks = [
     { text: "About us", route: "/about-us" },
-    { text: "Projects", route: "/projects" },
+    // { text: "Projects", route: "/projects" },
     { text: "Team", route: "/team" },
     { text: "Services", route: "/services" },
     { text: "Contact us", route: "/contact-us" },

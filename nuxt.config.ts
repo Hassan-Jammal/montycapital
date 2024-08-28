@@ -3,6 +3,9 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
   css: ["~/assets/sass/app.sass"],
+  serverMiddleware: [
+    { path: '/api/geoip', handler: '~/server/api/geoip.js' },
+  ],
   app: {
     head: {
       charset: "utf-8",

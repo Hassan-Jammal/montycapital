@@ -1,5 +1,5 @@
 <template lang="">
-    <section class="banner">
+    <section class="banner extra-spacing">
         <div class="container">
             <div class="wrapper">
                 <h1 class="heading" data-aos="fade-up" data-aos-delay="100">Your strategic partner</h1>
@@ -10,23 +10,23 @@
                 </div>
             </div>
         </div>
-    </section>
 
-    <section class="services-section">
-        <div class="container">
-            <div class="wrapper">
-                <div class="image" data-aos="fade-up">
-                    <NuxtPicture priority format="webp,avif" :src="`images/your-strategic-partner.png`" class="w-full"
-                        :imgAttrs="{class:'w-full'}" />
+        <div class="services-wrapper">
+            <div class="container">
+                <div class="inner-wrapper">  
+                    <div class="image" data-aos="fade-up">
+                        <NuxtPicture priority format="webp,avif" :src="`images/your-strategic-partner.png`" class="w-full"
+                            :imgAttrs="{class:'w-full'}" />
+                    </div>
+                    <p class="description" data-aos="fade-up">
+                        At Monty Capital, we recognize that navigating the capital landscape is a complex journey for
+                        businesses.<br />
+                        Many struggle to become investor-ready, execute impactful roadshows, and negotiate favorable
+                        terms.<br />
+                        That's where we come in. Our end-to-end capital raising service ensures your company is not only
+                        investor-ready but excels in roadshows and negotiations.
+                    </p>
                 </div>
-                <p class="description" data-aos="fade-up">
-                    At Monty Capital, we recognize that navigating the capital landscape is a complex journey for
-                    businesses.<br />
-                    Many struggle to become investor-ready, execute impactful roadshows, and negotiate favorable
-                    terms.<br />
-                    That's where we come in. Our end-to-end capital raising service ensures your company is not only
-                    investor-ready but excels in roadshows and negotiations.
-                </p>
             </div>
         </div>
     </section>
