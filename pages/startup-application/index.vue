@@ -660,8 +660,6 @@
 
     // Submitting the form
     const handleSubmit = async () => {
-
-        console.log(initialCode)
         // Disable the submit button
         isSubmitting.value = true;
 
@@ -860,14 +858,9 @@
             const data = await response.json();
 
             if (data && data.country) {
-                
                 const detectedCountry = countriesData.find(country => country.iso2 === data.country);
-                console.log("detected "+detectedCountry)
-                console.log("selected "+selectedCountry.value)
-                console.log("form "+form.value.code)
-                console.log("initial "+initialCode.value)
-
-                if (detectedCountry && !selectedCountry.value) {
+                //&& !selectedCountry.value
+                if (detectedCountry ) {
                     selectedCountry.value = detectedCountry;
                     form.value.code = detectedCountry.code;
                     initialCode.value = detectedCountry.code
