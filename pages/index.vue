@@ -140,24 +140,38 @@
             </div>
 
             <div class="wrapper">
-                <div class="item" v-for="(news, index) in newsList" :key="index" data-aos="fade-up"
-                    :data-aos-delay="(index + 1) * 100">
-                    <NuxtPicture priority format="webp,avif" :src="`images/${news.image}.png`" class="w-full"
-                        :imgAttrs="{class:'w-full'}" />
+                <template v-if="pending">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                        <div v-for="number in perPage">             
+                            <div class="flex flex-col gap-4 animate-pulse">
+                                <div class="rounded-md h-[350px] w-full bg-[#f2f2f2]"></div>
+                                <div class="rounded-md w-1/2 h-[25px] bg-[#f2f2f2]"></div>
+                                <div class="rounded-md w-3/4 h-[28px] bg-[#f2f2f2]"></div>
+                                <div class="rounded-md h-[15px] bg-[#f2f2f2]"></div>
+                                <div class="rounded-md h-[15px] bg-[#f2f2f2]"></div>
+                                <div class="rounded-md h-[15px] bg-[#f2f2f2]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <template v-else>
+                    <div class="item" v-for="(post, index) in posts" :key="index" data-aos="fade-up"
+                        :data-aos-delay="(index + 1) * 100">
+                        <NuxtPicture priority format="webp,avif" :src="post._embedded['wp:featuredmedia'][0].media_details.sizes?.large?.source_url" class="image w-full" :imgAttrs="{class:'w-full'}" />
 
-                    <span class="date">{{ news.date }}</span>
+                        <span class="date">
+                            <span>{{ new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' }) }}</span>
+                        </span>
 
-                    <hr />
+                        <hr />
 
-                    <h3 class="title">
-                        {{ news.title }}
-                    </h3>
+                        <h3 class="title" v-html="post.title.rendered"></h3>
 
-                    <button class="button">
-                        <a href="">Read More
-                        </a>
-                    </button>
-                </div>
+                        <NuxtLink class="button" :to="`/news/${post.slug}`">Read More</NuxtLink>
+                    </div>
+
+                    
+                </template>
             </div>
         </div>
     </section>
@@ -251,6 +265,20 @@
         { title: "New devices and applications come to the market.", date: "June 20, 2023", image: "new-devices-and-applications" },
         { title: "Everyday providing solutions to problems.", date: "June 20, 2023", image: "everyday-providing-solutions" },
     ];
+
+    const totalPages = ref(0);
+    const currentPage = ref(1);
+    const perPage = ref(3);
+    const postsSection = ref(null);
+
+    const {data: posts, pending, error, refresh } = await useFetch('https://backend.montypay.com/wp-json/wp/v2/posts', {
+        query: { categories: 7, per_page: perPage, page: currentPage, _embed: '1' },
+        lazy: true,
+        server: false,
+        onResponse({ request, response, options }) {
+            totalPages.value = parseInt(response.headers.get('X-WP-TotalPages'));
+        }
+    });
 </script>
 
 <style lang="sass">

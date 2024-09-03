@@ -171,13 +171,13 @@
         </div>
     </section>
 
-    <section class="mm-map">
+    <section class="mm-map ">
         <div class="container">
             <div class="wrapper">
                 <h2 class="heading" data-aos-delay="100">Global TMT Player - MontyMobile</h2>
                 <h3 class="subheading" data-aos-delay="100">19 Countries</h3>
 
-                <div class="mt-20">
+                <div class="mt-20 hidden md:block">
                     <!-- <Map class="map" /> -->
                     <svg ref="svgContainer" viewBox="0 0 1069 577" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1064.51 105.714C1066.28 105.714 1067.72 104.275 1067.72 102.501C1067.72 100.726 1066.28 99.2869 1064.51 99.2869C1062.73 99.2869 1061.29 100.726 1061.29 102.501C1061.29 104.275 1062.73 105.714 1064.51 105.714Z" stroke="#F6F5EF" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1831,9 +1831,23 @@
                         <p class="location" v-if="location">{{ location }}</p>
                     </div>
                 </div>
+
+                <section class="marquee no-spacing block md:hidden bg-black">
+                    <div class="wrapper">
+                        <template v-for="(marquee, index) in marqueeList" :key="index">
+                            <div class="flex flex-col justify-center items-center gap-4 text-white text-center w-full"> 
+                                <img :src="`/images/flags/${marquee.iso2}.svg`" width="25" height="25" :alt="country" v-if="marquee.iso2" />
+                                <h2 class="text-base">{{ marquee.country }}</h2>
+                                <p class="text-xs w-3/4">{{ marquee.location }}</p>
+                            </div>
+                        </template>
+                    </div>
+                </section>
             </div>
         </div>
     </section>
+
+    
 </template>
 
 <script setup>
@@ -1897,9 +1911,46 @@
             visibility: 'hidden',
         };
     };
+
+    const marqueeList = [
+        { iso2: "LB", country: "Lebanon", location: "1st floor, Bloc E, Gefinor Center"},
+        { iso2: "NG", country: "Nigeria", location: "10th Floor, Standard Chartered HQ. No.142, Ahmadu Bello Way, Victoria Island, Eti-Osa"},
+        { iso2: "ID", country: "Jakarta, Indonesia", location: "Menara Prima, Bloc 6, 24th floor, Lingkar Mega Kuningan"},
+        { iso2: "AE", country: "UAE", location: "Unit 30, floor 20, Central Park Tower, DIFC"},
+        { iso2: "UK", country: "UK", location: "Beaumont Bridge House, 181 Queen Victoria Street"},
+        { iso2: "JO", country: "Jordan", location: "Office 501, Campbell Grey Living, Land Number 851, Al-Waibdeh - Al- Wastani Basin"},
+        { iso2: "PK", country: "Pakistan", location: ""},
+        { iso2: "BE", country: "Belgium", location: ""},
+        { iso2: "DE", country: "Germany", location: ""},
+        { iso2: "VN", country: "Vietnam", location: ""},
+        { iso2: "IN", country: "India", location: ""},
+        { iso2: "BD", country: "Bangladesh", location: ""},
+        { iso2: "GM", country: "Gambia", location: ""},
+        { iso2: "SA", country: "KSA", location: ""},
+        { iso2: "HR", country: "Croatia", location: "",  },
+        { iso2: "LK", country: "Srilanka", location: ""},
+        { iso2: "PH", country: "Philippines", location: ""},
+        { iso2: "LB", country: "Lebanon", location: "1st floor, Bloc E, Gefinor Center"},
+        { iso2: "NG", country: "Nigeria", location: "10th Floor, Standard Chartered HQ. No.142, Ahmadu Bello Way, Victoria Island, Eti-Osa"},
+        { iso2: "ID", country: "Jakarta, Indonesia", location: "Menara Prima, Bloc 6, 24th floor, Lingkar Mega Kuningan"},
+        { iso2: "AE", country: "UAE", location: "Unit 30, floor 20, Central Park Tower, DIFC"},
+        { iso2: "UK", country: "UK", location: "Beaumont Bridge House, 181 Queen Victoria Street"},
+        { iso2: "JO", country: "Jordan", location: "Office 501, Campbell Grey Living, Land Number 851, Al-Waibdeh - Al- Wastani Basin"},
+        { iso2: "PK", country: "Pakistan", location: ""},
+        { iso2: "BE", country: "Belgium", location: ""},
+        { iso2: "DE", country: "Germany", location: ""},
+        { iso2: "VN", country: "Vietnam", location: ""},
+        { iso2: "IN", country: "India", location: ""},
+        { iso2: "BD", country: "Bangladesh", location: ""},
+        { iso2: "GM", country: "Gambia", location: ""},
+        { iso2: "SA", country: "KSA", location: ""},
+        { iso2: "HR", country: "Croatia", location: "",  },
+        { iso2: "LK", country: "Srilanka", location: ""},
+        { iso2: "PH", country: "Philippines", location: ""},
+    ];
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
     .tooltip
         pointer-events: none
 
@@ -1908,5 +1959,8 @@
 
         &:hover
             fill: #E9E8D2
+
+    .marquee .wrapper
+        @apply grid grid-flow-col auto-cols-[10rem] my-10 items-start animate-[marqueeOffices_40s_linear_infinite]
 
 </style>
