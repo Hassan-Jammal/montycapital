@@ -172,10 +172,13 @@ main
             @apply bg-[url('images/news-bg-1.png')] bg-no-repeat bg-cover my-20
 
             .wrapper
-                @apply grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 justify-center
+                @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center
 
                 .item
                     @apply flex flex-col gap-2 p-4 bg-[#FBFBFB] rounded-xl
+
+                    .image
+                        @apply rounded-xl overflow-hidden
 
                     .date
                         @apply text-xs text-[#1F1F1F]

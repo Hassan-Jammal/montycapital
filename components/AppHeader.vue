@@ -91,8 +91,9 @@ const checkScrollPosition = () => {
 const navLinks = [
     { text: "About us", route: "/about-us" },
     // { text: "Projects", route: "/projects" },
-    { text: "Team", route: "/team" },
     { text: "Services", route: "/services" },
+    { text: "Team", route: "/team" },
+    { text: "News", route: "/news" },
     { text: "Contact us", route: "/contact-us" },
     { text: "Startup Application", route: "/startup-application" }
 ];
