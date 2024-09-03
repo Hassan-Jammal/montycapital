@@ -271,7 +271,7 @@
     const perPage = ref(3);
     const postsSection = ref(null);
 
-    const {data: posts, pending, error, refresh } = await useFetch('https://backend.montypay.com/wp-json/wp/v2/posts', {
+    const {data: posts, pending, error, refresh } = await useFetch('https://backend.montycapital.com/wp-json/wp/v2/posts', {
         query: { categories: 7, per_page: perPage, page: currentPage, _embed: '1' },
         lazy: true,
         server: false,
