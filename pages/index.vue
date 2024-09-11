@@ -136,7 +136,7 @@
         </div>
     </section>
 
-    <template v-if="posts">
+    <!-- <template v-if="posts">
         <section class="news">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
@@ -185,7 +185,7 @@
                 </div>
             </div>
         </section>
-    </template>
+    </template> -->
 </template>
 
 <script setup>
