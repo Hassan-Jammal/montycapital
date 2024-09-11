@@ -15,6 +15,10 @@ export const isValidCode = (code) => {
 };
 
 export const isValidUrl = (url) => {
+    if (!url) {
+        return true;
+    }
+
     return /^(ftp|http|https):\/\/[^ "]+$/.test(url);
 };
 

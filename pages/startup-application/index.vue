@@ -23,8 +23,7 @@
                 <div class="form-group" data-aos="fade-up">
                     <div class="input-container">
                         <label for="link" class="input-label">Website</label>
-                        <input v-model="form.link" type="text" id="link" placeholder="https:\\example.com"
-                            class="input-field">
+                        <input v-model="form.link" type="text" id="link" placeholder="https:\\example.com" class="input-field">
                         <div v-if="errors.link" class="input-error">{{ errors.link }}</div>
                     </div>
                     <div class="input-container">
@@ -37,19 +36,17 @@
                 <div class="form-group no-space" data-aos="fade-up">
                     <div class="input-container">
                         <label>Primary Contact</label>
-                        <input v-model="form.first_name" type="text" id="first_name" placeholder="First Name"
-                            class="input-field">
+                        <input v-model="form.first_name" type="text" id="first_name" placeholder="First Name" class="input-field">
                         <div v-if="errors.first_name" class="input-error">{{ errors.first_name }}</div>
                     </div>
                     <div class="input-container">
                         <label>&nbsp;</label>
-                        <input v-model="form.last_name" type="text" id="last_name" placeholder="Last Name"
-                            class="input-field">
+                        <input v-model="form.last_name" type="text" id="last_name" placeholder="Last Name (Optional)" class="input-field">
                         <div v-if="errors.last_name" class="input-error">{{ errors.last_name }}</div>
                     </div>
                 </div>
 
-                <div class="form-group" data-aos="fade-up">
+                <div class="form-group z-10" data-aos="fade-up">
                     <div class="input-container">
                         <label for="title" class="input-label">Title</label>
                         <input v-model="form.title" type="text" id="title" class="input-field">
@@ -62,40 +59,28 @@
                             <div class="input-container w-[160px]">
                                 <div @click="toggleDropdown" class="custom-dropdown input-field cursor-pointer">
                                     <div id="selected-country" class="selected-country">
-
-                                        <img class="selected-country--image"
-                                            :src="`/images/flags/${selectedCountry.iso2 || 'LB' }.svg`"
-                                            :alt="selectedCountry.name || 'Lebanon'" width="24" height="24">
-
-                                        <span class="selected-country--name">+{{ selectedCountry.code ||
-                                            '961' }}</span>
-
-                                        <!-- <Icon name="fa6-solid:angle-down" class="selected-country--icon"
-                                        :class="{'rotate-180': showDropdown}" /> -->
+                                        <img class="selected-country--image" :src="`/images/flags/${selectedCountry.iso2 || 'LB' }.svg`" :alt="selectedCountry.name || 'Lebanon'" width="24" height="24">
+                                        <span class="selected-country--name">+{{ selectedCountry.code || '961' }}</span>
+                                        <!-- <Icon name="fa6-solid:angle-down" class="selected-country--icon" :class="{'rotate-180': showDropdown}" /> -->
                                     </div>
                                 </div>
                                 <input v-model="form.code" type="hidden" id="code">
                                 <div v-if="errors.code" class="input-error">{{ errors.code }}</div>
                             </div>
 
-                            <ul v-if="showDropdown" ref="dropdownContainer" @scroll="handleScroll"
-                                class="dropdown-container">
-                                <input v-model="searchQuery" type="text" id="search" placeholder="Search"
-                                    class="input-search">
+                            <ul v-if="showDropdown" ref="dropdownContainer" @scroll="handleScroll" class="dropdown-container">
+                                <input v-model="searchQuery" type="text" id="search" placeholder="Search" class="input-search">
                                 <template v-for="country in filteredCountries">
-                                    <li v-if="country.status == 1" :key="country.id" @click="selectCountry(country)"
-                                        class="item">
-                                        <img :src="`/images/flags/${country.iso2}.svg`" :alt="country.name" width="24"
-                                            height="24" />
+                                    <li v-if="country.status == 1" :key="country.id" @click="selectCountry(country)" class="item">
+                                        <img :src="`/images/flags/${country.iso2}.svg`" :alt="country.name" width="24" height="24" />
                                         <span class="text-slate-500">(+{{ country.code }})</span>
-                                        {{ country.name }}
+                                        <span>{{ country.name }}</span>
                                     </li>
                                 </template>
                             </ul>
 
                             <div class="input-container">
-                                <input v-model="form.mobile" type="text" id="mobile" placeholder="Phone Number"
-                                    class="input-field">
+                                <input v-model="form.mobile" type="text" id="mobile" placeholder="Phone Number" class="input-field">
                                 <div v-if="errors.mobile" class="input-error">{{ errors.mobile }}</div>
                             </div>
                         </div>
@@ -105,14 +90,12 @@
                 <div class="form-group" data-aos="fade-up">
                     <div class="input-container">
                         <label for="email" class="input-label">Email</label>
-                        <input v-model="form.email" type="text" id="email" placeholder="example@example.com"
-                            class="input-field">
+                        <input v-model="form.email" type="text" id="email" placeholder="example@example.com" class="input-field">
                         <div v-if="errors.email" class="input-error">{{ errors.email }}</div>
                     </div>
                     <div class="input-container">
-                        <label for="linkedin_link" class="input-label">Linkedin Profile URL</label>
-                        <input v-model="form.linkedin_link" type="text" id="linkedin_link"
-                            placeholder="https:\\example.com" class="input-field">
+                        <label for="linkedin_link" class="input-label">Linkedin Profile URL (Optional)</label>
+                        <input v-model="form.linkedin_link" type="text" id="linkedin_link" placeholder="https:\\example.com" class="input-field">
                         <div v-if="errors.linkedin_link" class="input-error">{{ errors.linkedin_link }}</div>
                     </div>
                 </div>
@@ -124,10 +107,8 @@
                 <div class="form-group" data-aos="fade-up">
                     <div class="input-container">
                         <label for="company_description" class="input-label">Describe Company in 1-3 lines</label>
-                        <textarea v-model="form.company_description" id="company_description"
-                            class="input-field resize-none" rows="10"></textarea>
-                        <div v-if="errors.company_description" class="input-error">{{ errors.company_description }}
-                        </div>
+                        <textarea v-model="form.company_description" id="company_description" class="input-field resize-none" rows="10"></textarea>
+                        <div v-if="errors.company_description" class="input-error">{{ errors.company_description }}</div>
                     </div>
                 </div>
 
@@ -142,24 +123,19 @@
                                         <Icon name="hugeicons:cloud-upload" class="text-7xl" />
                                     </span>
                                     <span class="formbold-or text-4xl font-bold">Browse Files</span>
-                                    <span class="formbold-or mt-4 text-xs font-bold">Upload up to {{ MAX_FILES }} files
-                                        (PDF, DOC, DOCX, XLS, XLSX, CSV, TXT, JPG, JPEG, PNG)
-                                    </span>
+                                    <span class="formbold-or mt-4 text-xs font-bold">Upload up to {{ MAX_FILES }} files (PDF, DOC, DOCX, XLS, XLSX, CSV, TXT, JPG, JPEG, PNG)</span>
                                     <span class="formbold-or text-xs font-bold">Maximum file size: 20MB</span>
                                 </div>
                             </label>
                         </div>
                         <div v-if="fileMessage" class="message text-xs text-red-500">{{ fileMessage }}</div>
                         <div v-if="filesArray.length > 0" class="file-info-container flex flex-col gap-2">
-                            <div v-for="(file, index) in filesArray" :key="index" class="file-info p-4 rounded-xl"
-                                :class="{ 'bg-red-100 border-red-500': file.error, 'bg-slate-100': !file.error }">
+                            <div v-for="(file, index) in filesArray" :key="index" class="file-info p-4 rounded-xl" :class="{ 'bg-red-100 border-red-500': file.error, 'bg-slate-100': !file.error }">
                                 <div class="flex justify-between items-center">
                                     <p>Uploaded File: {{ file.name }}</p>
                                     <div class="flex justify-between items-center gap-2">
                                         <p>File Size: {{ file.size }}</p>
-                                        <Icon v-if="!file.error" @click="deleteFile(index)"
-                                            name="material-symbols:delete-outline-rounded"
-                                            class="text-lg text-red-500" />
+                                        <Icon v-if="!file.error" @click="deleteFile(index)" name="material-symbols:delete-outline-rounded" class="text-lg text-red-500" />
                                     </div>
                                 </div>
                                 <p v-if="file.error" class="text-red-500 text-sm">{{ file.error }}</p>
@@ -204,9 +180,8 @@
 
                 <div class="form-group" data-aos="fade-up">
                     <div class="input-container">
-                        <label for="target_market" class="input-label">Target Market</label>
-                        <select v-model="form.target_market" name="stage" id="target_market"
-                            class="custom-select input-field">
+                        <label for="target_market" class="input-label">Target Market (Optional)</label>
+                        <select v-model="form.target_market" name="stage" id="target_market" class="custom-select input-field">
                             <option value="">Select</option>
                             <option value="UAE">UAE</option>
                             <option value="India">India</option>
@@ -220,8 +195,7 @@
                     </div>
                     <div class="input-container">
                         <label for="product_launched" class="input-label">Product Launched</label>
-                        <select v-model="form.product_launched" name="product_launched" id="product_launched"
-                            class="custom-select input-field">
+                        <select v-model="form.product_launched" name="product_launched" id="product_launched" class="custom-select input-field">
                             <option value="">Select</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
@@ -233,21 +207,18 @@
                 <div class="form-group" data-aos="fade-up">
                     <div class="input-container">
                         <label for="comments" class="input-label">Additional Comments (Optional)</label>
-                        <textarea v-model="form.comments" id="comments" class="input-field resize-none"
-                            rows="10"></textarea>
-                        <div v-if="errors.comments" class="input-error">{{ errors.comments }}
-                        </div>
+                        <textarea v-model="form.comments" id="comments" class="input-field resize-none" rows="10"></textarea>
+                        <div v-if="errors.comments" class="input-error">{{ errors.comments }}</div>
                     </div>
                 </div>
 
-                <h2 class="heading" data-aos="fade-up">Founding Team Details</h2>
+                <!-- <h2 class="heading" data-aos="fade-up">Founding Team Details</h2>
 
                 <div class="repeater">
                     <div v-for="(founder, index) in form.founders" :key="index" class="founder">
                         <div class="flex justify-between items-center">
                             <span class="subheading">Founders # {{ index + 1 }}</span>
-                            <Icon v-if="form.founders.length > 1 && index > 0" @click="removeFounder(index)"
-                                class="remove-button text-xl cursor-pointer" name="material-symbols:close" />
+                            <Icon v-if="form.founders.length > 1 && index > 0" @click="removeFounder(index)" class="remove-button text-xl cursor-pointer" name="material-symbols:close" />
                         </div> 
 
                         <hr /> 
@@ -255,65 +226,47 @@
                         <div class="form-group no-space" data-aos="fade-up">
                             <div class="input-container">
                                 <label :for="'founder_first_name_' + index" class="input-label">Full Name</label>
-                                <input v-model="founder.founder_first_name" :id="'founder_first_name_' + index"
-                                    placeholder="First Name" class="input-field">
-                                <div v-if="errors.founders && errors.founders[index]?.founder_first_name"
-                                    class="input-error">{{ errors.founders[index].founder_first_name }}
-                                </div>
+                                <input v-model="founder.founder_first_name" :id="'founder_first_name_' + index"  placeholder="First Name" class="input-field">
+                                <div v-if="errors.founders && errors.founders[index]?.founder_first_name" class="input-error">{{ errors.founders[index].founder_first_name }}</div>
                             </div>
                             <div class="input-container">
                                 <label :for="'founder_last_name_' + index" class="input-label">&nbsp;</label>
-                                <input v-model="founder.founder_last_name" :id="'founder_last_name_' + index"
-                                    placeholder="Last Name" class="input-field">
-                                <div v-if="errors.founders && errors.founders[index]?.founder_last_name"
-                                    class="input-error">{{ errors.founders[index].founder_last_name }}
-                                </div>
+                                <input v-model="founder.founder_last_name" :id="'founder_last_name_' + index" placeholder="Last Name" class="input-field">
+                                <div v-if="errors.founders && errors.founders[index]?.founder_last_name" class="input-error">{{ errors.founders[index].founder_last_name }}</div>
                             </div>
                         </div>
 
                         <div class="form-group" data-aos="fade-up">
                             <div class="input-container">
                                 <label :for="'founder_email_' + index" class="input-label">Email</label>
-                                <input v-model="founder.founder_email" :id="'founder_email_' + index"
-                                    class="input-field">
-                                <div v-if="errors.founders && errors.founders[index]?.founder_email"
-                                    class="input-error">{{ errors.founders[index].founder_email }}</div>
+                                <input v-model="founder.founder_email" :id="'founder_email_' + index" class="input-field">
+                                <div v-if="errors.founders && errors.founders[index]?.founder_email" class="input-error">{{ errors.founders[index].founder_email }}</div>
                             </div>
                             <div class="input-container">
                                 <label :for="'founder_title_' + index" class="input-label">Title</label>
-                                <input v-model="founder.founder_title" :id="'founder_title_' + index"
-                                    class="input-field">
-                                <div v-if="errors.founders && errors.founders[index]?.founder_title"
-                                    class="input-error">{{ errors.founders[index].founder_title }}</div>
+                                <input v-model="founder.founder_title" :id="'founder_title_' + index" class="input-field">
+                                <div v-if="errors.founders && errors.founders[index]?.founder_title" class="input-error">{{ errors.founders[index].founder_title }}</div>
                             </div>
                         </div>
 
                         <div class="form-group" data-aos="fade-up">
                             <div class="input-container">
-                                <label :for="'founder_linkedin_link_' + index" class="input-label">LinkedIn Profile
-                                    URL</label>
-                                <input v-model="founder.founder_linkedin_link" :id="'founder_linkedin_link_' + index"
-                                    placeholder="https:\\example.com" class="input-field">
-                                <div v-if="errors.founders && errors.founders[index]?.founder_linkedin_link"
-                                    class="input-error">{{ errors.founders[index].founder_linkedin_link }}</div>
+                                <label :for="'founder_linkedin_link_' + index" class="input-label">LinkedIn Profile URL</label>
+                                <input v-model="founder.founder_linkedin_link" :id="'founder_linkedin_link_' + index" placeholder="https:\\example.com" class="input-field">
+                                <div v-if="errors.founders && errors.founders[index]?.founder_linkedin_link" class="input-error">{{ errors.founders[index].founder_linkedin_link }}</div>
                             </div>
                             <div class="input-container"></div>
                         </div>
-
-                        <!-- <hr /> -->
                     </div>
 
-                    <button v-if="form.founders.length < 3" @click="addFounder"
-                        class="text-left w-max border-b border-black" data-aos="fade-up">+ Add
-                        More</button>
-                </div>
+                    <button v-if="form.founders.length < 3" @click="addFounder" class="text-left w-max border-b border-black" data-aos="fade-up">+ Add More</button>
+                </div> -->
 
                 <div class="form-group" data-aos="fade-up">
                     <button type="submit" id="submit" class="button" @click.prevent="handleSubmit">Submit</button>
                 </div>
-                <div v-if="submissionMessage" class="text-center"
-                    :class="{'text-red-500': isError, 'text-gray-500': !isError}">{{
-                    submissionMessage }}</div>
+                
+                <div v-if="submissionMessage" class="text-center" :class="{'text-red-500': isError, 'text-gray-500': !isError}">{{ submissionMessage }}</div>
             </div>
         </div>
     </section>
@@ -440,7 +393,7 @@
             safe: 'Your input has invalid value'
         },
         last_name: {
-            required: 'Please enter your last name',
+            // required: 'Please enter your last name',
             safe: 'Your input has invalid value'
         },
         title: {
@@ -464,7 +417,7 @@
             safe: 'Your input has invalid value'
         },
         linkedin_link: {
-            required: 'Please enter your Linkedin URL',
+            // required: 'Please enter your Linkedin URL',
             url: 'Please enter a valid URL for your Linkedin profile',
             safe: 'Your input has invalid value'
         },
@@ -485,7 +438,7 @@
             safe: 'Your input has invalid value'
         },
         target_market: {
-            required: 'Please choose your target market',
+            // required: 'Please choose your target market',
             safe: 'Your input has invalid value'
         },
         product_launched: {
@@ -495,62 +448,62 @@
         comments: {
             safe: 'Your input has invalid value'
         },
-        founders: {
-            required: 'Please add at least one founder',
-            items: {
-                founder_first_name: {
-                    required: 'Please enter a first name',
-                    safe: 'Your input has invalid value'
-                },
-                founder_last_name: {
-                    required: 'Please enter a last name',
-                    safe: 'Your input has invalid value'
-                },
-                founder_email: {
-                    required: 'Please enter an email address',
-                    email: 'Please enter a valid email address',
-                    safe: 'Your input has invalid value'
-                },
-                founder_title: {
-                    required: 'Please enter a title',
-                    safe: 'Your input has invalid value'
-                },
-                founder_linkedin_link: {
-                    required: 'Please enter a Linkedin URL',
-                    url: 'Please enter a valid URL for the Linkedin profile',
-                    safe: 'Your input has invalid value'
-                },
-            }
-        }
-    };
-
-    // Founders Repeater
-    const addFounder = () => {
-        if (form.value.founders.length < MAX_FOUNDERS) {
-            form.value.founders.push({
-                founder_first_name: '',
-                founder_last_name: '',
-                founder_email: '',
-                founder_title: '',
-                founder_linkedin_link: '',
-            });
-            errors.value.founders.push({
-                founder_first_name: '',
-                founder_last_name: '',
-                founder_email: '',
-                founder_title: '',
-                founder_linkedin_link: '',
-            });
-        }
-        // else {
-        //     alert(`You can only add up to ${MAX_FOUNDERS} founders.`);
+        // founders: {
+        //     required: 'Please add at least one founder',
+        //     items: {
+        //         founder_first_name: {
+        //             required: 'Please enter a first name',
+        //             safe: 'Your input has invalid value'
+        //         },
+        //         founder_last_name: {
+        //             required: 'Please enter a last name',
+        //             safe: 'Your input has invalid value'
+        //         },
+        //         founder_email: {
+        //             required: 'Please enter an email address',
+        //             email: 'Please enter a valid email address',
+        //             safe: 'Your input has invalid value'
+        //         },
+        //         founder_title: {
+        //             required: 'Please enter a title',
+        //             safe: 'Your input has invalid value'
+        //         },
+        //         founder_linkedin_link: {
+        //             required: 'Please enter a Linkedin URL',
+        //             url: 'Please enter a valid URL for the Linkedin profile',
+        //             safe: 'Your input has invalid value'
+        //         },
+        //     }
         // }
     };
 
-    const removeFounder = (index) => {
-        form.value.founders.splice(index, 1);
-        errors.value.founders.splice(index, 1);
-    };
+    // // Founders Repeater
+    // const addFounder = () => {
+    //     if (form.value.founders.length < MAX_FOUNDERS) {
+    //         form.value.founders.push({
+    //             founder_first_name: '',
+    //             founder_last_name: '',
+    //             founder_email: '',
+    //             founder_title: '',
+    //             founder_linkedin_link: '',
+    //         });
+    //         errors.value.founders.push({
+    //             founder_first_name: '',
+    //             founder_last_name: '',
+    //             founder_email: '',
+    //             founder_title: '',
+    //             founder_linkedin_link: '',
+    //         });
+    //     }
+    //     // else {
+    //     //     alert(`You can only add up to ${MAX_FOUNDERS} founders.`);
+    //     // }
+    // };
+
+    // const removeFounder = (index) => {
+    //     form.value.founders.splice(index, 1);
+    //     errors.value.founders.splice(index, 1);
+    // };
 
     // Files Uploads 
     const formatFileSize = (size) => {
@@ -705,14 +658,14 @@
                 formData.append(`file_${index + 1}`, file.file);
             });
 
-            // Append founders
-            form.value.founders.forEach((founder, index) => {
-                formData.append(`founder_${index + 1}_first_name`, founder.founder_first_name);
-                formData.append(`founder_${index + 1}_last_name`, founder.founder_last_name);
-                formData.append(`founder_${index + 1}_email`, founder.founder_email);
-                formData.append(`founder_${index + 1}_title`, founder.founder_title);
-                formData.append(`founder_${index + 1}_linkedin_link`, founder.founder_linkedin_link);
-            });
+            // // Append founders
+            // form.value.founders.forEach((founder, index) => {
+            //     formData.append(`founder_${index + 1}_first_name`, founder.founder_first_name);
+            //     formData.append(`founder_${index + 1}_last_name`, founder.founder_last_name);
+            //     formData.append(`founder_${index + 1}_email`, founder.founder_email);
+            //     formData.append(`founder_${index + 1}_title`, founder.founder_title);
+            //     formData.append(`founder_${index + 1}_linkedin_link`, founder.founder_linkedin_link);
+            // });
 
             formData.append('_wpcf7_unit_tag', 'rte');
 
@@ -732,9 +685,20 @@
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-
+            
             const data = await response.json();
             // console.log("Form submitted successfully:", data);
+
+            if(data.status == 'validation_failed'){
+                submissionMessage.value = "Error in submitting your message. Please try again later";
+                isError.value = true;
+
+                // Clear error message after 2 seconds
+                setTimeout(() => {
+                    submissionMessage.value = '';
+                }, 2000);
+                throw new Error('Validation Error');
+            }
 
             submissionMessage.value = "Thank you for your message."
             isError.value = false;
@@ -748,7 +712,7 @@
         } catch (error) {
             console.error("Form submission error:", error);
             // Set error message
-            submissionMessage.value = "Error in submitting your message.";
+            submissionMessage.value = "Error in submitting your message. Please try again later";
             isError.value = true;
 
             // Clear error message after 2 seconds
@@ -779,13 +743,13 @@
             target_market: '',
             product_launched: '',
             comments: '',
-            founders: [{
-                founder_first_name: '',
-                founder_last_name: '',
-                founder_email: '',
-                founder_title: '',
-                founder_linkedin_link: '',
-            }],
+            // founders: [{
+            //     founder_first_name: '',
+            //     founder_last_name: '',
+            //     founder_email: '',
+            //     founder_title: '',
+            //     founder_linkedin_link: '',
+            // }],
         };
         errors.value = {
             company_name: '',
@@ -806,13 +770,13 @@
             target_market: '',
             product_launched: '',
             comments: '',
-            founders: form.value.founders.map(() => ({
-                founder_first_name: '',
-                founder_last_name: '',
-                founder_email: '',
-                founder_title: '',
-                founder_linkedin_link: '',
-            }))
+            // founders: form.value.founders.map(() => ({
+            //     founder_first_name: '',
+            //     founder_last_name: '',
+            //     founder_email: '',
+            //     founder_title: '',
+            //     founder_linkedin_link: '',
+            // }))
         };
         filesArray.value = []; // Clear the files array
         if (fileInputRef.value) {
@@ -917,6 +881,26 @@
     };
 
     watch(searchQuery, searchCountries);
+
+    // FOR WORDPRESS CONTACT FORM AFTER ADDING FOUNDERS
+
+    // [text* founder_1_first_name "First Name"]
+    // [text* founder_1_last_name "Last Name"]
+    // [email* founder_1_email "Email"]
+    // [text* founder_1_title "Title"]
+    // [url* founder_1_linkedin_link "LinkedIn Profile"]
+
+    // [text founder_2_first_name "First Name"]
+    // [text founder_2_last_name "Last Name"]
+    // [email founder_2_email "Email"]
+    // [text founder_2_title "Title"]
+    // [url founder_2_linkedin_link "LinkedIn Profile"]
+
+    // [text founder_3_first_name "First Name"]
+    // [text founder_3_last_name "Last Name"]
+    // [email founder_3_email "Email"]
+    // [text founder_3_title "Title"]
+    // [url founder_3_linkedin_link "LinkedIn Profile"]
 </script>
 
 <style lang="sass">

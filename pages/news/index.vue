@@ -45,19 +45,21 @@
                 </template>
             </div>
 
-            <ul class="flex gap-2 justify-center items-center py-16">
-                <li>
-                    <button :class="{'cursor-default opacity-40': currentPage==1}" class="text-3xl" @click="goToPage(currentPage>1 ? currentPage-1 : 1 )"> < </button>
-                </li>
-                <li v-for="pageNumber in totalPages" :key="'page-'+pageNumber">
-                    <button :class="pageNumber == currentPage ? 'cursor-default bg-black text-white' : 'bg-white text-black' " @click="goToPage(pageNumber)" class="w-[40px] h-[40px] border border-black rounded-xl flex items-center justify-center hover:bg-black hover:text-white">
-                        {{ pageNumber }}
-                    </button>
-                </li>
-                <li>
-                    <button :class="{'cursor-default opacity-40': currentPage==totalPages}" class="text-3xl" @click="goToPage( currentPage==totalPages ? currentPage : currentPage+1 )"> > </button>
-                </li>
-            </ul>
+            <template v-if="posts">
+                <ul class="flex gap-2 justify-center items-center py-16">
+                    <li>
+                        <button :class="{'cursor-default opacity-40': currentPage==1}" class="text-3xl" @click="goToPage(currentPage>1 ? currentPage-1 : 1 )"> < </button>
+                    </li>
+                    <li v-for="pageNumber in totalPages" :key="'page-'+pageNumber">
+                        <button :class="pageNumber == currentPage ? 'cursor-default bg-black text-white' : 'bg-white text-black' " @click="goToPage(pageNumber)" class="w-[40px] h-[40px] border border-black rounded-xl flex items-center justify-center hover:bg-black hover:text-white">
+                            {{ pageNumber }}
+                        </button>
+                    </li>
+                    <li>
+                        <button :class="{'cursor-default opacity-40': currentPage==totalPages}" class="text-3xl" @click="goToPage( currentPage==totalPages ? currentPage : currentPage+1 )"> > </button>
+                    </li>
+                </ul>
+            </template>
         </div>
     </section>
 </template>

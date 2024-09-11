@@ -67,15 +67,17 @@
                                 class="image w-full" :imgAttrs="{class:'w-full'}" />
                         </div>
                     </div>
-                    <div class="bottom" data-aos="fade-up">
+                    <div class="bottom" data-aos="fade-up" v-if="teamMember.experience || teamMember.mobile || teamMember.email">
                         <div class="experience">
-                            <NuxtPicture v-for="(experience, index) in teamMember.experience" :key="index"
-                                data-aos="fade-up" :data-aos-delay="(index + 1) * 100" priority format="webp,avif"
-                                :src="`images/${experience.image}.png`" class="w-full" :imgAttrs="{class:'w-full'}" />
+                            <NuxtPicture 
+                                v-for="(experience, index) in teamMember.experience" :key="index" 
+                                data-aos="fade-up" :data-aos-delay="(index + 1) * 100" priority format="webp,avif" 
+                                :src="`images/${experience.image}.png`" class="w-full" :imgAttrs="{class:'w-full'}" 
+                            />
                         </div>
 
                         <div class="info">
-                            <div class="mobile">
+                            <div class="mobile" v-if="teamMember.mobile">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -86,7 +88,7 @@
 
                                 <span>{{ teamMember.mobile }}</span>
                             </div>
-                            <div class="email">
+                            <div class="email" v-if="teamMember.email">
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -243,32 +245,32 @@
                 }
             ]
         },
-        // {
-        //     name: 'Liliane Madi',
-        //     title: 'Manager',
-        //     image: 'liliane-madi',
-        //     quote: '',
-        //     description: 'Liliane Madi has 13 years of experience in commercial and corporate banking. In her previous role, she performed financial and credit analysis of project financing transactions for well- established companies and startups, in the Telecom, Information technology, Real Estate and Retail industries.<br />Ms. Madi has a B.S. in Banking and Finance from the Lebanese American University. She is a CFA charterholder.',
-        //     mobile: '+123456',
-        //     email: 'test@montyholding.com',
-        //     experience: [
-        //         {
-        //             company: 'Fuel Ventures',
-        //             // image: 'fuel-ventures',
-        //             image: 'rothschild-co',
-        //         },
-        //         {
-        //             company: 'Tech Stars',
-        //             // image: 'tech-stars',
-        //             image: 'rothschild-co',
-        //         },
-        //         {
-        //             company: 'Latoken',
-        //             // image: 'latoken',
-        //             image: 'rothschild-co',
-        //         }
-        //     ]
-        // },
+        {
+            name: 'Liliane Madi',
+            title: 'Manager',
+            image: 'liliane-madi',
+            quote: '',
+            description: 'Liliane Madi has 13 years of experience in commercial and corporate banking. In her previous role, she performed financial and credit analysis of project financing transactions for well- established companies and startups, in the Telecom, Information technology, Real Estate and Retail industries.<br />Ms. Madi has a B.S. in Banking and Finance from the Lebanese American University. She is a CFA charterholder.',
+            // mobile: '+123456',
+            // email: 'test@montyholding.com',
+            // experience: [
+                // {
+                //     company: 'Fuel Ventures',
+                //     // image: 'fuel-ventures',
+                //     image: 'rothschild-co',
+                // },
+                // {
+                //     company: 'Tech Stars',
+                //     // image: 'tech-stars',
+                //     image: 'rothschild-co',
+                // },
+                // {
+                //     company: 'Latoken',
+                //     // image: 'latoken',
+                //     image: 'rothschild-co',
+                // }
+            // ]
+        },
     ]
 
     const teamExperiencesList = [

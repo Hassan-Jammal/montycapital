@@ -2,10 +2,10 @@
     <section class="hero-banner no-spacing">
         <div class="container">
             <div class="wrapper">
-                <h1 class="heading" data-aos="fade-up" data-aos-delay="100">Welcome to Monty Capital's Network</h1>
+                <h1 class="heading" data-aos="fade-up" data-aos-delay="100">Welcome to Monty Capital Network</h1>
                 <p class="description" data-aos="fade-up" data-aos-delay="200">We have positioned ourselves as a trusted partner in the ever-evolving landscape of global finance.</p>
                 <div data-aos="fade-up" data-aos-delay="300">
-                    <button class="button">Get Started</button>
+                    <NuxtLink class="button" to="/startup-application">Read More</NuxtLink>
                 </div>
             </div>
         </div>
@@ -14,7 +14,14 @@
     <section class="marquee no-spacing">
         <div class="wrapper">
             <template v-for="(marquee, index) in marqueeList" :key="index">
-                <img class="marquee-item" :src="`images/${marquee.image}.png`" :alt="marquee.alt" :width="marquee.width" :height="marquee.height" data-aos="fade-up" :data-aos-delay="(index + 1) * 100"/>
+                <a :href="marquee.link" target="_blank">
+                    <img class="marquee-item" :src="`images/${marquee.image}.png`" :alt="marquee.alt" :width="marquee.width" :height="marquee.height" data-aos="fade-up" :data-aos-delay="(index + 1) * 100"/>
+                </a>
+            </template>
+            <template v-for="(marquee, index) in marqueeList" :key="index">
+                <a :href="marquee.image" target="_blank">
+                    <img class="marquee-item" :src="`images/${marquee.image}.png`" :alt="marquee.alt" :width="marquee.width" :height="marquee.height" data-aos="fade-up" :data-aos-delay="(index + 1) * 100"/>
+                </a>
             </template>
         </div>
     </section>
@@ -51,9 +58,11 @@
                 <div class="card-wrapper three">
                     <div class="content-block">
                         <template data-aos="fade-right" :data-aos-delay="(index + 1) * 100" v-for="(stat, index) in statsList" :key="index">
-                            <div  class="content">
-                                <span class="content--key">{{ stat.key }}</span>
-                                <span class="content--label">{{ stat.label }}</span>
+                            <div class="wrapper">
+                                <div class="content">
+                                    <span class="content--key">{{ stat.key }}</span>
+                                    <span class="content--label">{{ stat.label }}</span>
+                                </div>
                             </div>
                         </template>
                     </div>
@@ -127,54 +136,56 @@
         </div>
     </section>
 
-    <section class="news">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2 class="heading">Get News Feeds</h2>
-                <div class="icon">
-                    <div class="line line1"></div>
-                    <div class="tri tri1"></div>
-                    <div class="tri tri2"></div>
-                    <div class="line line2"></div>
+    <template v-if="posts">
+        <section class="news">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2 class="heading">Get News Feeds</h2>
+                    <div class="icon">
+                        <div class="line line1"></div>
+                        <div class="tri tri1"></div>
+                        <div class="tri tri2"></div>
+                        <div class="line line2"></div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="wrapper">
-                <template v-if="pending">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        <div v-for="number in perPage">             
-                            <div class="flex flex-col gap-4 animate-pulse">
-                                <div class="rounded-md h-[350px] w-full bg-[#f2f2f2]"></div>
-                                <div class="rounded-md w-1/2 h-[25px] bg-[#f2f2f2]"></div>
-                                <div class="rounded-md w-3/4 h-[28px] bg-[#f2f2f2]"></div>
-                                <div class="rounded-md h-[15px] bg-[#f2f2f2]"></div>
-                                <div class="rounded-md h-[15px] bg-[#f2f2f2]"></div>
-                                <div class="rounded-md h-[15px] bg-[#f2f2f2]"></div>
+                <div class="wrapper">
+                    <template v-if="pending">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                            <div v-for="number in perPage">             
+                                <div class="flex flex-col gap-4 animate-pulse">
+                                    <div class="rounded-md h-[350px] w-full bg-[#f2f2f2]"></div>
+                                    <div class="rounded-md w-1/2 h-[25px] bg-[#f2f2f2]"></div>
+                                    <div class="rounded-md w-3/4 h-[28px] bg-[#f2f2f2]"></div>
+                                    <div class="rounded-md h-[15px] bg-[#f2f2f2]"></div>
+                                    <div class="rounded-md h-[15px] bg-[#f2f2f2]"></div>
+                                    <div class="rounded-md h-[15px] bg-[#f2f2f2]"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </template>
-                <template v-else>
-                    <div class="item" v-for="(post, index) in posts" :key="index" data-aos="fade-up"
-                        :data-aos-delay="(index + 1) * 100">
-                        <NuxtPicture priority format="webp,avif" :src="post._embedded['wp:featuredmedia'][0].media_details.sizes?.large?.source_url" class="image w-full" :imgAttrs="{class:'w-full'}" />
+                    </template>
+                    <template v-else>
+                        <div class="item" v-for="(post, index) in posts" :key="index" data-aos="fade-up"
+                            :data-aos-delay="(index + 1) * 100">
+                            <NuxtPicture priority format="webp,avif" :src="post._embedded['wp:featuredmedia'][0].media_details.sizes?.large?.source_url" class="image w-full" :imgAttrs="{class:'w-full'}" />
 
-                        <span class="date">
-                            <span>{{ new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' }) }}</span>
-                        </span>
+                            <span class="date">
+                                <span>{{ new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' }) }}</span>
+                            </span>
 
-                        <hr />
+                            <hr />
 
-                        <h3 class="title" v-html="post.title.rendered"></h3>
+                            <h3 class="title" v-html="post.title.rendered"></h3>
 
-                        <NuxtLink class="button" :to="`/news/${post.slug}`">Read More</NuxtLink>
-                    </div>
+                            <NuxtLink class="button" :to="`/news/${post.slug}`">Read More</NuxtLink>
+                        </div>
 
-                    
-                </template>
+                        
+                    </template>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </template>
 </template>
 
 <script setup>
@@ -204,33 +215,16 @@
     ];
 
     const marqueeList = [
-        { image: "airtel", alt: "Airtel", width: "133", height: "70", link: "/" },
-        { image: "expresso", alt: "Expresso", width: "90", height: "70", link: "/" },
-        { image: "hutchison-telecom", alt: "Hutchison Telecom", width: "148", height: "57", link: "/" },
-        { image: "kaleyra", alt: "kaleyra", width: "143", height: "47", link: "/" },
-        { image: "message-bird", alt: "Message Bird", width: "179", height: "59", link: "/" },
-        { image: "sap", alt: "SAP", width: "126", height: "73", link: "/" },
-        { image: "shopee", alt: "Shopee", width: "68", height: "95", link: "/" },
-        { image: "chinguitel", alt: "Chinguitel", width: "141", height: "50", link: "/" },
-        { image: "9-mobile", alt: "9 Mobile", width: "68", height: "80", link: "/" },
-        { image: "bics", alt: "Bics", width: "116", height: "61", link: "/" },
-        { image: "clickatell", alt: "Clickatell", width: "153", height: "55", link: "/" },
-        { image: "airtel", alt: "Airtel", width: "133", height: "70", link: "/" },
-        { image: "expresso", alt: "Expresso", width: "90", height: "70", link: "/" },
-        { image: "hutchison-telecom", alt: "Hutchison Telecom", width: "148", height: "57", link: "/" },
-        { image: "kaleyra", alt: "kaleyra", width: "143", height: "47", link: "/" },
-        { image: "message-bird", alt: "Message Bird", width: "179", height: "59", link: "/" },
-        { image: "sap", alt: "SAP", width: "126", height: "73", link: "/" },
-        { image: "shopee", alt: "Shopee", width: "68", height: "95", link: "/" },
-        { image: "chinguitel", alt: "Chinguitel", width: "141", height: "50", link: "/" },
-        { image: "9-mobile", alt: "9 Mobile", width: "68", height: "80", link: "/" },
-        { image: "bics", alt: "Bics", width: "116", height: "61", link: "/" },
-        { image: "clickatell", alt: "Clickatell", width: "153", height: "55", link: "/" },
+        { image: "mymonty-bw", alt: "MyMonty", width: "175", height: "35", link: "https://mymonty.com" },
+        { image: "montypay-bw", alt: "MontyPay", width: "183", height: "33", link: "https://montypay.com" },
+        { image: "monty-mobile-bw", alt: "Monty Mobile", width: "154", height: "48", link: "https://montymobile.com" },
+        { image: "monty-esim-bw", alt: "Monty eSim", width: "116", height: "44", link: "https://montyesim.com" },
+        { image: "comium-bw", alt: "Comium", width: "154", height: "38", link: "https://comium.gm" },
     ];
 
     const statsList = [
-        { key: "2023", label: "Year Established" },
-        { key: "5", label: "Team Size" },
+        { key: "2024", label: "Year Established" },
+        // { key: "5", label: "Team Size" },
         { key: "Deal Stages", label: "Pre Seed-Late Stage" },
         { key: "60+ Years", label: "Team Experience" },
         { key: "Dubai", label: "Location" },
@@ -242,7 +236,7 @@
         { title: "Accelerators Partners + Startup Competitions" },
         { title: "Investment Partners + Crowdfunding Platforms" },
         { title: "Corporate Partners + Growth Capital" },
-        { title: "PE & Advisory Partners" },
+        { title: "PE & Public Listing Exchanges" },
     ];
 
     const startupsList = [
