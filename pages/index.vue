@@ -119,7 +119,7 @@
         </div>
     </section>
 
-    <section class="values">
+    <section class="values mb-0">
         <div class="container">
             <div class="title">
                 <h2 class="heading" data-aos="fade-up">Monty Capital Values</h2>

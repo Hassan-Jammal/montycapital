@@ -11,60 +11,60 @@
             <div class="footer--middle">
                 <nav class="nav-wrapper">
                     <div class="nav-block">
-                        <h6 class="heading"><a href="/about-us">About Us</a></h6>
+                        <h6 class="heading"><NuxtLink to="/about-us">About Us</NuxtLink></h6>
                         <!-- <ul class="nav-list">
                             <li class="nav-item">
-                                <a href="" class="nav-link">Our Services</a>
+                                <NuxtLink to="" class="nav-link">Our Services</NuxtLink>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link">Monty Capital's Network</a>
+                                <NuxtLink to="" class="nav-link">Monty Capital's Network</NuxtLink>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link">Why Monty Capital</a>
+                                <NuxtLink to="" class="nav-link">Why Monty Capital</NuxtLink>
                             </li>
                         </ul> -->
                     </div>
 
                     <div class="nav-block">
-                        <h6 class="heading"><a href="/services">Services</a></h6>
+                        <h6 class="heading"><NuxtLink to="/services">Services</NuxtLink></h6>
                         <!-- <ul class="nav-list">
                             <li class="nav-item">
-                                <a href="" class="nav-link">Our Board</a>
+                                <NuxtLink to="" class="nav-link">Our Board</NuxtLink>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link">Our Team</a>
+                                <NuxtLink to="" class="nav-link">Our Team</NuxtLink>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link">Team Experience</a>
+                                <NuxtLink to="" class="nav-link">Team Experience</NuxtLink>
                             </li>
                         </ul> -->
                     </div>
 
                     <div class="nav-block">
-                        <h6 class="heading"><a href="/team">Team</a></h6>
+                        <h6 class="heading"><NuxtLink to="/team">Team</NuxtLink></h6>
                         <!-- <ul class="nav-list">
                             <li class="nav-item">
-                                <a href="" class="nav-link">Advisory</a>
+                                <NuxtLink to="" class="nav-link">Advisory</NuxtLink>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link">Digital Transformation</a>
+                                <NuxtLink to="" class="nav-link">Digital Transformation</NuxtLink>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link">Family Office Diversification Platform</a>
+                                <NuxtLink to="" class="nav-link">Family Office Diversification Platform</NuxtLink>
                             </li>
                         </ul> -->
                     </div>
 
                     <div class="nav-block">
-                        <h6 class="heading"><a href="/News">News</a></h6>
+                        <h6 class="heading"><NuxtLink to="/News">News</NuxtLink></h6>
                     </div>
 
                     <div class="nav-block">
-                        <h6 class="heading"><a href="/contact-us">Contact Us</a></h6>
+                        <h6 class="heading"><NuxtLink to="/contact-us">Contact Us</NuxtLink></h6>
                     </div>
 
                     <div class="nav-block">
-                        <h6 class="heading"><a href="/startup-application">Startup Application</a></h6>
+                        <h6 class="heading"><NuxtLink to="/startup-application">Startup Application</NuxtLink></h6>
                     </div>
                 </nav>
             </div>
@@ -77,11 +77,11 @@
 
                     <ul class="nav-list">
                         <li class="nav-item">
-                            <a href="" class="nav-link">Terms & Conditions</a>
+                            <NuxtLink to="/terms-and-conditions" class="nav-link">Terms & Conditions</NuxtLink>
                         </li>
                         <span class="hidden md:block">|</span>
                         <li class="nav-item">
-                            <a href="" class="nav-link">Privacy Policy</a>
+                            <NuxtLink to="/privacy-policy" class="nav-link">Privacy Policy</NuxtLink>
                         </li>
                     </ul>
                 </div>
