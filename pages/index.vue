@@ -2,7 +2,7 @@
     <section class="hero-banner no-spacing">
         <div class="container">
             <div class="wrapper">
-                <h1 class="heading" data-aos="fade-up" data-aos-delay="100">Welcome to Monty Capital Network</h1>
+                <h1 class="heading" data-aos="fade-up" data-aos-delay="100">Welcome to Monty Capital</h1>
                 <p class="description" data-aos="fade-up" data-aos-delay="200">We have positioned ourselves as a trusted partner in the ever-evolving landscape of global finance.</p>
                 <div data-aos="fade-up" data-aos-delay="300">
                     <NuxtLink class="button" to="/startup-application">Startup Application</NuxtLink>
