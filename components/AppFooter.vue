@@ -11,7 +11,7 @@
             <div class="footer--middle">
                 <nav class="nav-wrapper">
                     <div class="nav-block">
-                        <h6 class="heading"><NuxtLink to="/about-us">About Us</NuxtLink></h6>
+                        <h6 class="heading"><NuxtLink class="nav-link" to="/about-us">About Us</NuxtLink></h6>
                         <!-- <ul class="nav-list">
                             <li class="nav-item">
                                 <NuxtLink to="" class="nav-link">Our Services</NuxtLink>
@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="nav-block">
-                        <h6 class="heading"><NuxtLink to="/services">Services</NuxtLink></h6>
+                        <h6 class="heading"><NuxtLink class="nav-link" to="/services">Services</NuxtLink></h6>
                         <!-- <ul class="nav-list">
                             <li class="nav-item">
                                 <NuxtLink to="" class="nav-link">Our Board</NuxtLink>
@@ -41,7 +41,7 @@
                     </div>
 
                     <div class="nav-block">
-                        <h6 class="heading"><NuxtLink to="/team">Team</NuxtLink></h6>
+                        <h6 class="heading"><NuxtLink class="nav-link" to="/team">Team</NuxtLink></h6>
                         <!-- <ul class="nav-list">
                             <li class="nav-item">
                                 <NuxtLink to="" class="nav-link">Advisory</NuxtLink>
@@ -56,15 +56,15 @@
                     </div>
 
                     <div class="nav-block">
-                        <h6 class="heading"><NuxtLink to="/News">News</NuxtLink></h6>
+                        <h6 class="heading"><NuxtLink class="nav-link" to="/News">News</NuxtLink></h6>
                     </div>
 
                     <div class="nav-block">
-                        <h6 class="heading"><NuxtLink to="/contact-us">Contact Us</NuxtLink></h6>
+                        <h6 class="heading"><NuxtLink class="nav-link" to="/contact-us">Contact Us</NuxtLink></h6>
                     </div>
 
                     <div class="nav-block">
-                        <h6 class="heading"><NuxtLink to="/startup-application">Startup Application</NuxtLink></h6>
+                        <h6 class="heading"><NuxtLink class="nav-link" to="/startup-application">Startup Application</NuxtLink></h6>
                     </div>
                 </nav>
             </div>

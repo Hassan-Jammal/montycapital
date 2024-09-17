@@ -8,6 +8,12 @@
         .social-media
             @apply flex justify-center items-center gap-8 text-2xl
 
+            .link
+                @apply flex
+
+                &:hover
+                    @apply text-[#CABC64]
+
     &--middle
         .nav-wrapper
             @apply flex flex-col md:flex-row max-md:gap-4 justify-between
@@ -16,6 +22,9 @@
 
                 .heading
                     @apply font-medium
+
+                    .nav-link:hover
+                        @apply text-[#CABC64]
 
                 .nav-list
                     @apply hidden  md:flex flex-col gap-6 mt-4
@@ -34,6 +43,9 @@
 
             .nav-list
                 @apply flex flex-col md:flex-row md:justify-center md:gap-4 max-md:mt-6 font-light text-base
+
+                .nav-link:hover
+                    @apply text-[#CABC64]
 
         .bottom-level
             @apply mt-6
