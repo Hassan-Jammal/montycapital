@@ -6,7 +6,7 @@
                 <p class="description" data-aos="fade-up" data-aos-delay="200">The core ethos of Monty Capital revolves
                     around being a technology-first company.</p>
                 <div data-aos="fade-up" data-aos-delay="300">
-                    <button class="button">Get Started</button>
+                    <NuxtLink class="button" to="/startup-application">Startup Application</NuxtLink>
                 </div>
             </div>
         </div>
@@ -106,7 +106,7 @@
         </div>
     </section>
 
-    <section class="internation-tmt">
+    <section class="international-tmt">
         <div class="container">
             <div class="wrapper" data-aos="fade-up">
                 <div class="left" data-aos="fade-right">

@@ -358,6 +358,9 @@ main
                         .item
                             @apply flex gap-4
 
+                            .link:hover
+                                @apply text-[#CABC64]
+
                 .right
                     @apply flex-1 w-full
 
@@ -460,7 +463,10 @@ main
                                             @apply left-[20%]
 
                         .right
-                            @apply w-full flex-1 self-end hidden lg:block
+                            @apply w-full flex-1  self-end hidden lg:block
+
+                            img
+                                @apply w-3/4 ml-auto
 
                     .bottom
                         @apply flex flex-col md:flex-row justify-between items-center gap-20 p-4 md:p-8 bg-[#F7F7F3] rounded-xl
@@ -476,6 +482,9 @@ main
 
                             .email
                                 @apply flex items-center gap-4 mt-2
+
+                            .link:hover
+                                @apply text-[#CABC64]
 
         &.team-experience
             @apply bg-[url('images/financial-advisory-bg-1.png')] bg-no-repeat bg-cover overflow-y-visible
@@ -559,7 +568,7 @@ main
                             span:last-of-type
                                 @apply col-span-1
 
-        &.internation-tmt
+        &.international-tmt
             .wrapper
                 @apply flex flex-col md:flex-row justify-between items-center gap-12 md:gap-24 py-20 px-10 text-white bg-black rounded-xl
 

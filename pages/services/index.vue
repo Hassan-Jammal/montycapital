@@ -6,7 +6,7 @@
                 <p class="description" data-aos="fade-up" data-aos-delay="200">Transform challenges into successful
                     capital outcomes with Monty Capital.</p>
                 <div data-aos="fade-up" data-aos-delay="300">
-                    <button class="button">Get Started</button>
+                    <NuxtLink class="button" to="/startup-application">Startup Application</NuxtLink>
                 </div>
             </div>
         </div>

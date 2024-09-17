@@ -93,7 +93,7 @@ const navLinks = [
     // { text: "Projects", route: "/projects" },
     { text: "Services", route: "/services" },
     { text: "Team", route: "/team" },
-    { text: "News", route: "/news" },
+    // { text: "News", route: "/news" },
     { text: "Contact us", route: "/contact-us" },
     { text: "Startup Application", route: "/startup-application" }
 ];
