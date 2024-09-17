@@ -10,7 +10,7 @@
                     <nav class="header-inner--nav-desktop">
                         <ul class="nav-list">
                             <li class="nav-list--item" v-for="(link, index) in navLinks" :key="index">
-                                <NuxtLink :to="link.route" class="nav-list--item-link">
+                                <NuxtLink :to="link.route" class="nav-list--item-link" exact-active-class="active">
                                    {{link.text}}
                                 </NuxtLink>
                             </li>
@@ -27,7 +27,7 @@
             <div class="container">  
                 <ul class="nav-mobile--list">
                     <li class="nav-mobile--list-item" v-for="(link, index) in navLinks" :key="index">
-                        <NuxtLink :to="link.route" class="nav-mobile--list-item-link">
+                        <NuxtLink :to="link.route" class="nav-mobile--list-item-link" exact-active-class="active">
                            {{link.text}}
                         </NuxtLink>
                     </li>
