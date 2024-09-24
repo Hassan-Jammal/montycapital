@@ -3,8 +3,7 @@
         <div class="container">
             <div class="wrapper">
                 <h1 class="heading" data-aos="fade-up" data-aos-delay="100">A team focused on growth and progress.</h1>
-                <p class="description" data-aos="fade-up" data-aos-delay="200">We are based around the globe but share
-                    one drive.</p>
+                <p class="description" data-aos="fade-up" data-aos-delay="200">We are based around the globe but share one drive.</p>
             </div>
         </div>
     </section>
@@ -49,18 +48,18 @@
                 <div class="item" v-for="(teamMember, index) in teamMembersList" :key="index">
                     <div class="top">
                         <div class="left" data-aos="fade-right">
-                            <div>
+                            <div class="flex flex-col gap-4">
                                 <h3 class="heading">{{ teamMember.name }}</h3>
                                 <h4 class="title">{{ teamMember.title }}</h4>
+                                <div class="description">
+                                    <p v-html="teamMember.description"></p>
+                                    <!-- <button class="button">
+                                        <a href="">Read More</a>
+                                    </button> -->
+                                </div>
                             </div>
                             <NuxtPicture priority format="webp,avif" :src="`images/${teamMember.image}.png`"
                                 class="image" :imgAttrs="{class:'w-full'}" />
-                            <div class="description">
-                                <p v-html="teamMember.description"></p>
-                                <!-- <button class="button">
-                                    <a href="">Read More</a>
-                                </button> -->
-                            </div>
                         </div>
                         <div class="right" data-aos="fade-left">
                             <NuxtPicture priority format="webp,avif" :src="`images/${teamMember.image}.png`" class="image w-full" />

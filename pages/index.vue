@@ -220,6 +220,7 @@
         { image: "monty-mobile-bw", alt: "Monty Mobile", width: "154", height: "48", link: "https://montymobile.com" },
         { image: "monty-esim-bw", alt: "Monty eSim", width: "116", height: "44", link: "https://montyesim.com" },
         { image: "comium-bw", alt: "Comium", width: "154", height: "38", link: "https://comium.gm" },
+        { image: "ludium-bw", alt: "LudiumLab", width: "136", height: "47", link: "https://www.ludiumlab.com/" },
     ];
 
     const statsList = [
