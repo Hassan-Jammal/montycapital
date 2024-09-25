@@ -95,7 +95,7 @@ const navLinks = [
     { text: "Team", route: "/team" },
     // { text: "News", route: "/news" },
     { text: "Contact us", route: "/contact-us" },
-    { text: "Startup Application", route: "/startup-application" }
+    { text: "Startup application", route: "/startup-application" }
 ];
 </script>
 

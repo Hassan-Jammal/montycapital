@@ -11,7 +11,7 @@
             <div class="footer--middle">
                 <nav class="nav-wrapper">
                     <div class="nav-block">
-                        <h6 class="heading"><NuxtLink class="nav-link" to="/about-us">About Us</NuxtLink></h6>
+                        <h6 class="heading"><NuxtLink class="nav-link" to="/about-us">About us</NuxtLink></h6>
                         <!-- <ul class="nav-list">
                             <li class="nav-item">
                                 <NuxtLink to="" class="nav-link">Our Services</NuxtLink>
@@ -60,11 +60,11 @@
                     </div>
 
                     <div class="nav-block">
-                        <h6 class="heading"><NuxtLink class="nav-link" to="/contact-us">Contact Us</NuxtLink></h6>
+                        <h6 class="heading"><NuxtLink class="nav-link" to="/contact-us">Contact us</NuxtLink></h6>
                     </div>
 
                     <div class="nav-block">
-                        <h6 class="heading"><NuxtLink class="nav-link" to="/startup-application">Startup Application</NuxtLink></h6>
+                        <h6 class="heading"><NuxtLink class="nav-link" to="/startup-application">Startup application</NuxtLink></h6>
                     </div>
                 </nav>
             </div>
