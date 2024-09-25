@@ -208,7 +208,7 @@
                 },
                 {
                     company: 'Ey',
-                    image: 'Ey',
+                    image: 'ey',
                 }
             ]
         },
