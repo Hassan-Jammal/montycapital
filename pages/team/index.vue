@@ -47,9 +47,6 @@
             <div class="wrapper">
                 <div class="item" v-for="(teamMember, index) in teamMembersList" :key="index">
                     <div class="top">
-                        <div class="right" data-aos="fade-left">
-                            <NuxtPicture priority format="webp,avif" :src="`images/${teamMember.image}.png`" class="image w-full" />
-                        </div>
                         <div class="left" data-aos="fade-right">
                             <div class="flex flex-col gap-4">
                                 <h3 class="heading">{{ teamMember.name }}</h3>
@@ -63,6 +60,9 @@
                             </div>
                             <NuxtPicture priority format="webp,avif" :src="`images/${teamMember.image}.png`"
                                 class="image" :imgAttrs="{class:'w-full'}" />
+                        </div>
+                        <div class="right" data-aos="fade-left">
+                            <NuxtPicture priority format="webp,avif" :src="`images/${teamMember.image}.png`" class="image w-full" />
                         </div>
                     </div>
                     <div class="bottom" data-aos="fade-up" v-if="teamMember.experience || teamMember.mobile || teamMember.email">
