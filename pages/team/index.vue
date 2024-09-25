@@ -204,7 +204,7 @@
                 },
                 {
                     company: 'Abington Advisory',
-                    image: 'abington',
+                    image: 'abington-advisory',
                 },
                 {
                     company: 'Ey',
