@@ -218,7 +218,7 @@
             image: 'mohammad-bakodah',
             quote: '',
             description: 'Mohammed is based in Abu Dhabi with experience in Corporate Finance and Equity Research including VC Financing, M&A, Audit, Fundraising and Alternative Investments. He has a bachelors degree in Accounting & Finance from Abu Dhabi University, holds MCSI from CISI and FMVA.<br />My hobbies encompass reading nonfiction, horseback riding, watching documentaries, and engaging in sports like boxing, UFC, and Jiu Jitsu. I also enjoy shooting, endurance training, and taking ice baths.',
-            mobile: '+971547175099',
+            mobile: '+971582040467',
             email: 'Mohammed.bakodah@montyholding.com',
             experience: [
                 {
