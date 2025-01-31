@@ -544,6 +544,7 @@
 
         // Update the file message if needed
         fileMessage.value = '';
+        file.value = '';
 
         // Optional: you may want to revalidate the file count here
     };

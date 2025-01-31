@@ -48,15 +48,36 @@
             <template v-if="posts">
                 <ul class="flex gap-2 justify-center items-center py-16">
                     <li>
-                        <button :class="{'cursor-default opacity-40': currentPage==1}" class="text-3xl" @click="goToPage(currentPage>1 ? currentPage-1 : 1 )"> < </button>
+                        <button
+                            :class="{ 'cursor-default opacity-40': currentPage === 1 }"
+                            class="text-3xl"
+                            @click="goToPage(currentPage > 1 ? currentPage - 1 : 1)"
+                        >
+                            &lt;
+                        </button>
                     </li>
-                    <li v-for="pageNumber in totalPages" :key="'page-'+pageNumber">
-                        <button :class="pageNumber == currentPage ? 'cursor-default bg-black text-white' : 'bg-white text-black' " @click="goToPage(pageNumber)" class="w-[40px] h-[40px] border border-black rounded-xl flex items-center justify-center hover:bg-black hover:text-white">
+
+                    <li
+                        v-for="pageNumber in getPageRange()"
+                        :key="'page-' + pageNumber"
+                    >
+                        <button
+                            :class="pageNumber === currentPage ? 'cursor-default bg-black text-white' : 'bg-white text-black'"
+                            @click="goToPage(pageNumber)"
+                            class="w-[40px] h-[40px] border border-black rounded-xl flex items-center justify-center hover:bg-black hover:text-white"
+                        >
                             {{ pageNumber }}
                         </button>
                     </li>
+
                     <li>
-                        <button :class="{'cursor-default opacity-40': currentPage==totalPages}" class="text-3xl" @click="goToPage( currentPage==totalPages ? currentPage : currentPage+1 )"> > </button>
+                        <button
+                            :class="{ 'cursor-default opacity-40': currentPage === totalPages }"
+                            class="text-3xl"
+                            @click="goToPage(currentPage === totalPages.value ? currentPage : currentPage + 1)"
+                        >
+                            &gt;
+                        </button>
                     </li>
                 </ul>
             </template>
@@ -77,11 +98,34 @@
     const goToPage = (pageNumber) => {
         currentPage.value = pageNumber;
         postsSection.value.scrollIntoView({ behavior: "smooth" });
-    }
+    };
+
     const totalPages = ref(0);
     const currentPage = ref(1);
     const perPage = ref(6);
     const postsSection = ref(null);
+
+    // Define a computed range of pages to display in the pagination
+    const getPageRange = () => {
+        const range = [];
+        let start = 1;
+        let end = 2;
+
+        if (currentPage.value === 1) {
+            end = Math.min(2, totalPages.value);
+        } else if (currentPage.value === totalPages.value) {
+            start = Math.max(totalPages.value - 2, 1);
+        } else {
+            start = currentPage.value - 1;
+            end = Math.min(currentPage.value + 1, totalPages.value);
+        }
+
+        for (let i = start; i <= end; i++) {
+            range.push(i);
+        }
+
+        return range;
+    };
 
     const {data: posts, pending, error, refresh } = await useFetch('https://backend.montycapital.com/wp-json/wp/v2/posts', {
         query: { categories: 7, per_page: perPage, page: currentPage, _embed: '1' },

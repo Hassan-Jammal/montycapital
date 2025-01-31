@@ -73,7 +73,7 @@
 
             <div class="footer--bottom">
                 <div class="top-level">
-                    <p class="copyright">© 2024 Copyright and rights reserved</p>
+                    <p class="copyright">© {{ new Date().getFullYear() }} Copyright and rights reserved</p>
 
                     <ul class="nav-list">
                         <li class="nav-item">
